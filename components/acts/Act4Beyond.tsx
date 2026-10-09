@@ -7,36 +7,42 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const voices = [
   {
     text: "Failed a paper sophomore year. Still here.",
+    author: "Riya · 2nd year",
     edge: "paper-edge-one",
     rotation: "-rotate-[3deg]",
     offset: "md:translate-y-3",
   },
   {
     text: "Took a gap semester. Don't regret it.",
+    author: "Kabir · 3rd year",
     edge: "paper-edge-two",
     rotation: "rotate-[2deg]",
     offset: "md:translate-y-0",
   },
   {
     text: "Cried in the library bathroom more times than I can count.",
+    author: "Meher · 2nd year",
     edge: "paper-edge-three",
     rotation: "-rotate-[1.5deg]",
     offset: "md:translate-y-4",
   },
   {
     text: "Changed my major twice. Nobody tells you that's okay.",
+    author: "Arjun · Final year",
     edge: "paper-edge-four",
     rotation: "rotate-[3deg]",
     offset: "md:translate-y-1",
   },
   {
     text: "Still figuring it out. Most of us are.",
+    author: "Zoya · 3rd year",
     edge: "paper-edge-one",
     rotation: "-rotate-[2deg]",
     offset: "md:translate-y-4",
   },
   {
     text: "Asked for help. It didn't make me weaker.",
+    author: "Neil · Final year",
     edge: "paper-edge-two",
     rotation: "rotate-[1.5deg]",
     offset: "md:translate-y-0",
@@ -142,10 +148,13 @@ export default function Act4Beyond() {
               className={`flex w-full max-w-[280px] justify-center ${voice.offset}`}
             >
               <article
-                className={`act4-voice-card ${voice.edge} ${voice.rotation} flex h-[232px] w-full items-center justify-center p-7 text-center font-display text-[22px] italic leading-[1.25] text-[#392c20] sm:text-[23px]`}
+                className={`act4-voice-card ${voice.edge} ${voice.rotation} flex h-[232px] w-full flex-col justify-between p-7 text-center font-display text-[22px] italic leading-[1.25] text-[#392c20] sm:text-[23px]`}
                 style={{ backgroundColor: "#eee2c8" }}
               >
-                {voice.text}
+                <p className="my-auto w-full">{voice.text}</p>
+                <p className="self-end whitespace-nowrap font-display text-[12px] not-italic leading-none text-[#71563d]">
+                  — {voice.author}
+                </p>
               </article>
             </div>
           ))}
